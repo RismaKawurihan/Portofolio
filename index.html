@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio</title>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #39a9ff, #00ff88);
+      color: #333;
+      margin-left: 320px;
+      padding: 20px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 350px;
+      background: linear-gradient(135deg, #0077ff, #00ff88);
+      color: white;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar h1 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .sidebar p {
+      font-size: 0.9em;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar a:hover {
+      color: yellow;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+      font-family: Georgia, serif;
+      text-align: justify;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    .card h3 {
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .card ul {
+      margin-bottom: 25px;
+    }
+
+    .card li {
+      margin-bottom: 12px;
+    }
+
+    .section-divider {
+      border-top: 2px solid #ddd;
+      margin: 35px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h1>Risma Enggar Sri Kawurihan</h1>
+    <p>WebGIS Developer | GIS Mapping | Geospatial Data Specialist | Spatial Data Analyst</p>
+    <a href="#tentang">Tentang Saya</a>
+    <a href="#mapping">Mapping</a>
+    <a href="#proyek">Proyek</a>
+    <a href="#organisasi">Organisasi</a>
+  </div>
+
+  <!-- Konten -->
+  <div class="content">
+    <!-- Tentang Saya -->
+    <section id="tentang" data-aos="fade-up">
+      <div class="card">
+        <h2>Tentang Saya</h2>
+        <p> Sebagai mahasiswa semester tujuh di Program Studi Sistem Informasi Geografis, Sekolah Vokasi, Universitas
+          Gadjah
+          Mada, saya memiliki ketertarikan dan keahlian dalam pengelolaan serta analisis data spasial.
+          Berbekal pengalaman menggunakan berbagai perangkat lunak GIS seperti ArcGIS, AutoCAD, QGIS, pgAdmin, dan Ocean
+          Data View, saya mampu mengolah dan memvisualisasikan data spasial secara efektif.
+          Selain itu, saya memiliki pengetahuan dasar beberapa bahasa pemrograman seperti R, Python, JavaScript,
+          HTML/CSS,
+          dan PHP yang saya gunakan untuk mengelola data spasial, melakukan analisis, membangun WebGIS, serta
+          mengembangkan aplikasi.
+          Saya juga memiliki keterampilan dalam pemrosesan data berbasis deep learning menggunakan Google Earth Engine
+          (GEE) dan ArcGIS Pro, khususnya dalam deteksi objek, ekstraksi fitur, dan pembuatan model 3D, sehingga dapat
+          mendukung pengambilan keputusan berbasis informasi geospasial secara lebih akurat dan efisien.</p>
+
+        <div class="section-divider"></div>
+
+        <!-- Pengalaman Magang -->
+        <h3>Pengalaman Magang</h3>
+        <ul>
+          <li><strong>Kementerian ATR/BPN</strong> (Jan 2025 - Feb 2025)
+            <br>Deteksi bangunan untuk membuat peta 3D Kabupaten Boyolali dengan ArcGIS Pro berbasis Deep Learning,
+            digitalisasi bangunan skala detail di AutoCAD, dan verifikasi data koordinat lapangan menggunakan Geodetic
+            GNSS.
+          </li>
+          <li><strong>Badan Pertanahan & Tata Ruang</strong> (Feb 2025 - Jun 2025)
+            <br>Evaluasi WebGIS seperti Pepadhang Resik Jogja, Loka Tata, dan Geoportal Kota Yogyakarta.
+            <br>Pengembangan WebGIS Loka Tata untuk meningkatkan aksesibilitas data spasial, digitalisasi 791 bidang
+            tanah di BHUMI ATR/BPN, pemetaan digitasi bangunan, serta survei nomor bangunan.
+          </li>
+        </ul>
+
+        <!-- Praktik Kerja Lapangan -->
+        <h3>Praktik Kerja Lapangan (PKL)</h3>
+        <ul>
+          <li><strong>PKL Pertama – Universitas Gadjah Mada</strong> (Feb 2023 - Jul 2023)
+            <br>Mempersiapkan data geospasial dan mengenalkan bentuk lahan di Sleman, Kota Yogyakarta, dan Bantul.
+            Membuat Peta Dasar dan Peta Tematik di Kecamatan Turi, Sleman, Daerah Istimewa Yogyakarta.
+          </li>
+          <li><strong>PKL Kedua – Universitas Gadjah Mada</strong> (Mar 2024 - Jul 2024)
+            <br>Pengambilan data dan pemetaan Dusun Nguntuk-untuk, Desa Ngargosari, Kecamatan Samigaluh, Kabupaten Kulon
+            Progo, Daerah Istimewa Yogyakarta.
+          </li>
+        </ul>
+
+        <div class="section-divider"></div>
+
+      </div>
+    </section>
+
+
+    <!-- Mapping -->
+    <section id="mapping" data-aos="fade-up">
+      <h2 style="text-align:center; font-family: Georgia, serif;"> Pemetaan </h2>
+      <div class="projects">
+        <div class="card project" data-aos="zoom-in">
+          <img src="Dampak Tsunami.jpg" alt="Proyek 1">
+          <h3>Peta Kerawanan Tsunami</h3>
+          <p>Peta ini menggambarkan tingkat kerawanan tsunami di wilayah pesisir Parangtristis, diklasifikasikan menjadi
+            sangat rendah hingga sangat tinggi. Informasi ini berguna untuk perencanaan mitigasi
+            bencana dan penentuan zona evakuasi.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="200">
+          <img src="DAS.jpg" alt="Proyek 2">
+          <h3>Peta Daerah Orde Sungai</h3>
+          <p>Peta ini menunjukkan pembagian dan klasifikasi orde sungai di suatu wilayah, digunakan untuk analisis
+            jaringan hidrografi, pengelolaan sumber daya air, dan mitigasi bencana banjir.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="Klaster.jpg" alt="Proyek 3">
+          <h3>Peta Kepadatan Bangunan</h3>
+          <p>Peta ini memvisualisasikan tingkat kepadatan bangunan pada suatu area, bermanfaat untuk perencanaan tata
+            ruang, pengendalian pembangunan, dan pengelolaan infrastruktur.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="Suhu.jpg" alt="Proyek 3">
+          <h3>Peta Suhu</h3>
+          <p>Peta ini menunjukkan distribusi suhu udara di suatu wilayah pada periode tertentu, berguna untuk analisis
+            iklim, perencanaan pertanian, dan pemantauan perubahan cuaca.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="Flow Map.png" alt="Proyek 3">
+          <h3>Peta Flow Map Jumlah Penumpang Pesawat</h3>
+          <p>Peta ini menggambarkan arus pergerakan penumpang pesawat antar bandara dengan menggunakan simbol flow map,
+            membantu analisis konektivitas dan tren transportasi udara.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="Jumlah PDD.png" alt="Proyek 3">
+          <h3> Peta Jumlah Penduduk</h3>
+          <p>Peta ini menampilkan distribusi jumlah penduduk di wilayah tertentu, digunakan untuk perencanaan pelayanan
+            publik, pembangunan, dan kebijakan sosial.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="Penggunaan Lahan.jpg" alt="Proyek 3">
+          <h3>Peta Penggunaan Lahan</h3>
+          <p>Peta ini memetakan pemanfaatan lahan seperti permukiman, pertanian, hutan, dan badan air, penting untuk
+            pengelolaan lingkungan dan pengendalian perubahan lahan.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="Pola Ruang.png" alt="Proyek 3">
+          <h3>Peta Pola Ruang</h3>
+          <p>Peta ini menggambarkan peruntukan ruang berdasarkan rencana tata ruang wilayah, termasuk kawasan lindung
+            dan
+            kawasan budidaya.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="MVI.jpg" alt="Proyek 3">
+          <h3>Peta Mangrove Vegetasi dan Indeks</h3>
+          <p>Peta ini menunjukkan sebaran vegetasi mangrove beserta indeks kerapatan atau kesehatan, digunakan untuk
+            pemantauan ekosistem pesisir dan konservasi.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="Tentatif.jpg" alt="Proyek 3">
+          <h3>Peta Tentatif Penggunaan Lahan</h3>
+          <p>Peta ini menyajikan rancangan awal penggunaan lahan yang masih bersifat tentatif, berguna sebagai bahan
+            diskusi dan evaluasi dalam perencanaan tata ruang.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="Geomorfologi.jpg" alt="Proyek 3">
+          <h3>Peta Geomorfologi</h3>
+          <p>Peta ini menampilkan bentuk dan struktur permukaan bumi, termasuk bentang alam seperti gunung, lembah, dan
+            dataran, yang penting untuk studi geologi dan mitigasi bencana.</p>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <img src="Hujan Wilayah.jpg" alt="Proyek 3">
+          <h3>Peta Hujan Wilayah</h3>
+          <p>Peta ini memvisualisasikan distribusi curah hujan di suatu wilayah, digunakan untuk perencanaan pertanian,
+            pengelolaan sumber daya air, dan mitigasi banjir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyek -->
+    <section id="proyek" data-aos="fade-up">
+      <h2 style="text-align:center; font-family: Georgia, serif;">Proyek</h2>
+      <div class="projects">
+        <div class="card project" data-aos="zoom-in">
+          <h3>WebGIS GoToTrans</h3>
+          <p>WebGIS yang dirancang untuk mempermudahkan masyarakat dalam menjangkau informasi tentang TransJoga. WebGIS
+            ini memiliki
+            fitur peta interaktif yang berisi persebaran halte dan jalur trans jogja sesuai kode bus. Selain peta
+            tersebut, WebGIS
+            ini juga memberikan imformasi pemberhentian lokasi wisata yang populer di Yogyakarta. </p>
+          <img src="GoToTrans.png" alt="Proyek 1">
+          <div class="btn-container">
+            <a href="https://github.com/RismaKawurihan/pgweb_responsi" class="btn">Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="200">
+          <h3>WebGIS Mueban</h3>
+          <p>WebGIS yang dirancang untuk mengetahui persebaran Museum yang berada di Bandung. Pada WebGIS ini memiliki
+            fitur unggulan
+            yaitu peta interaktif dan tabel informasi terkait museum tersebut. Setiap lokasi museum teritegrasi dengan
+            lokasi halte
+            Trans Bandung untuk memudahkan para turis asing atau wisatawan untuk menjangkau museum.</p>
+          <img src="Mueban.png" alt="Proyek 2">
+          <div class="btn-container">
+            <a href="https://github.com/RismaKawurihan/mueban" class="btn">Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <h3>The Beautiful Earth Lombok </h3>
+          <p>WebGIS StoryMap ini berisi jelajah keindahan Pulau Lombok melalui paduan narasi visual dan peta interaktif.
+            Dalam StoryMap ini,
+            memuat potret kehidupan budaya lokal yang kaya tradisi, menjadikan Lombok sebagai destinasi wisata yang
+            tidak
+            hanya indah secara
+            visual, tetapi juga bernilai historis dan kultural. </p>
+          <img src="Lombok.png" alt="Proyek 3">
+          <div class="btn-container">
+            <a href="https://storymaps.arcgis.com/stories/ea58e449eb6e4c2fa41cccba146f70fd" class="btn">Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <h3>Swaraning Sidorejo </h3>
+          <p>WebGIS StoryMap ini berisi mengenai jejak sejarah, lingkungan, budaya, wisata, dan karya lokal yang ada di
+            Desa Sidorejo.
+            Perancangan WebGIS ini bertujuan sebagai bentuk digitalisasi informasi desa, sehingga data dan potensi yang
+            dimiliki dapat
+            terdokumentasi dengan baik, mudah diakses, dan dapat dimanfaatkan untuk promosi, edukasi, serta pengambilan
+            keputusan berbasis
+            data spasial. </p>
+          <img src="Swaraning Sidorejo.png" alt="Proyek 4">
+          <div class="btn-container">
+            <a href="https://bit.ly/swaraningsidorejo" class="btn">Lihat Proyek</a>
+          </div>
+        </div>
+        <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+          <h3>Aplikasi Mobile DailyAPP</h3>
+          <p>Aplikasi mobile DailyAPP dirancang untuk mengatur aktivitas, perjalanan, pan pencarian lokasi bagi para
+            pengguna. Aplikasi ini
+            memuat fitur Planning untuk merencanakan kegitan, Memories untuk menyimpan kenangan kegiatan, serta
+            Recommended untuk merekomendasikan
+            rumah makan, cafe, spot foto yang ada di Yogyakarta. Selain itu terdapat fitur Map yang berisi persebaran
+            lokasi santai yang disertai
+            informasi tentang lokasi tersebut.</p>
+          <img src="Daily App.png" alt="Proyek 5">
+        </div>
+      </div>
+  </div>
+  </section>
+
+  <section id="organisasi" data-aos="fade-up">
+    <div class="card">
+      <!-- Pendidikan -->
+      <h3>Pendidikan</h3>
+      <ul>
+        <li><strong>SMA Negeri 1 Banyudono</strong> – Ilmu Pengetahuan Alam (Jun 2019 - Jul 2022) </li>
+        <li><strong>Universitas Gadjah Mada</strong> – Sarjana Terapan Sistem Informasi Geografis, IPK 3.36/4.00 (Ags
+          2022 - Mei 2026)</li>
+      </ul>
+
+      <div class="section-divider"></div>
+      <!-- Pengalaman Organisasi -->
+      <h3>Pengalaman Organisasi</h3>
+      <ul>
+        <li><strong>Keluarga Mahasiswa Departemen Teknologi Kebumian (KMDTK)</strong> – Staf Divisi Kewirausahaan (Mar
+          2024 - Jul 2024)
+          <br>Mengelola dan membeli merchandise untuk dijual di kantin, bekerja sama dengan 14 anggota divisi.
+        </li>
+        <li><strong>PPSMB Pionir Permadani</strong> – Co-Fasilitator & Divisi Kegiatan (Ags 2023 - Nov 2024)
+          <br>Memandu mahasiswa baru dalam orientasi kampus dan menjadi penghubung komunikasi dengan panitia.
+        </li>
+        <li><strong>Ramadhan Berkah Mardliyyah (RBM) & SAJADHA</strong> – Humas & Liaison Officer (Mar 2023 - Ags
+          2024)
+          <br>Membangun hubungan dengan sponsor, media, dan publik; mengatur komunikasi dengan tamu atau pembicara.
+        </li>
+        <li><strong>Kebumian Study Club (KSC)</strong> – Anggota (Des 2023 - Jul 2024)
+          <br>Berpartisipasi dalam pelatihan dan kegiatan klub.
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak" data-aos="fade-up">
+    <div class="card">
+      <h2>Kontak</h2>
+      <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"
+          style="width:20px; vertical-align:middle; margin-right:5px;">
+        Email: <a href="mailto:rismaenggarsrikawurihan@mail.ugm.ac.id">rismaenggarsrikawurihan@mail.ugm.ac.id</a>
+        &nbsp; | &nbsp;
+        <img src="2227.jpg" alt="Instagram"
+          style="width:20px; vertical-align:middle; margin-right:5px;">
+        <a href="https://instagram.com/risma_kawurihan2513" target="_blank">Instagram: risma_kawurihan2513</a>
+      </p>
+
+      <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"
+          style="width:20px; vertical-align:middle; margin-right:5px;">
+        LinkedIn: <a href="https://linkedin.com/in/RismaKawurihan" target="_blank">linkedin.com/in/RismaKawurihan</a>
+        &nbsp; | &nbsp;
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+          style="width:20px; vertical-align:middle; margin-right:5px;">
+        <a href="https://wa.me/6281575806132" target="_blank">WhatsApp: +62 815-7580-6132</a>
+      </p>
+
+      <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub"
+          style="width:20px; vertical-align:middle; margin-right:5px;">
+        GitHub: <a href="https://github.com/RismaKawurihan" target="_blank">github.com/RismaKawurihan</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Risma Enggar Sri Kawurihan
+  </footer>
+
+  <!-- Script AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+
+</html>
