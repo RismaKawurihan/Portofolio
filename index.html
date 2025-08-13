@@ -118,44 +118,60 @@
             color: #0077ff;
         }
 
+        /* Service List */
         .service-list {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            /* 2 kolom */
-            gap: 15px;
+            /* 2 kolom desktop */
+            gap: 12px;
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
+        /* Service Card */
         .service-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            /* ikon vertikal center dengan teks */
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 10px 12px;
+            /* card lebih compact */
+            border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            gap: 10px;
+            /* jarak ikon dan teks */
         }
 
         .service-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
         }
 
-        .service-icon-box {
+        /* Icon */
+        .service-icon-box img {
+            width: 14px;
+            /* ikon sangat kecil */
+            height: 14px;
+            object-fit: contain;
             flex-shrink: 0;
-            margin-right: 12px;
+        }
+
+        /* Content */
+        .service-content-box {
+            display: flex;
+            flex-direction: column;
         }
 
         .service-content-box h4 {
-            margin: 0 0 5px 0;
-            font-size: 1.1rem;
+            margin: 0 0 3px 0;
+            font-size: 0.95rem;
             color: #333;
         }
 
         .service-content-box p {
             margin: 0;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
             color: #555;
         }
 
@@ -619,6 +635,28 @@
                 left: 50%;
             }
 
+            .service-list {
+                grid-template-columns: 1fr;
+                /* 1 kolom vertical */
+            }
+
+            .service-item {
+                padding: 8px 10px;
+                gap: 8px;
+            }
+
+            .service-icon-box img {
+                width: 12px;
+                height: 12px;
+            }
+
+            .service-content-box h4 {
+                font-size: 0.9rem;
+            }
+
+            .service-content-box p {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -689,52 +727,48 @@
 
                 <!-- My Skills -->
                 <h3 class="h3 service-title">My Skills</h3>
+
                 <ul class="service-list">
-                    <li class="service-item" data-aos="fade-up" data-aos-delay="100">
-                        <img class="service-icon" src="web.png" alt="WebGIS icon">
-                        <div class="service-text">
-                            <h4 class="h4 service-item-title">WebGIS Developer</h4>
-                            <p class="service-item-text">
-                                Designing and developing interactive map-based applications integrating spatial data
-                                with modern web technologies.
-                            </p>
+                    <li class="service-item">
+                        <div class="service-icon-box">
+                            <img src="web.png" alt="WebGIS Icon">
+                        </div>
+                        <div class="service-content-box">
+                            <h4>WebGIS Developer</h4>
+                            <p>Designing and developing interactive map-based applications integrating spatial data
+                                with modern web technologies.</p>
                         </div>
                     </li>
-
-                    <li class="service-item" data-aos="fade-up" data-aos-delay="100">
-                        <img class="service-icon" src="mapping.png" alt="GIS Mapping icon">
-                        <div class="service-text">
-                            <h4 class="h4 service-item-title">GIS Mapping</h4>
-                            <p class="service-item-text">
-                                Creating accurate and detailed maps for various purposes, including urban planning,
-                                environmental studies, and infrastructure development.
-                            </p>
+                    <li class="service-item">
+                        <div class="service-icon-box">
+                            <img src="mapping.png" alt="GIS Mapping Icon">
+                        </div>
+                        <div class="service-content-box">
+                            <h4>GIS Mapping</h4>
+                            <p>Creating accurate and detailed maps for various purposes, including urban planning,
+                                environmental studies, and infrastructure development.</p>
                         </div>
                     </li>
-
-                    <li class="service-item" data-aos="fade-up" data-aos-delay="100">
-                        <img class="service-icon" src="geospatial.png" alt="Geospatial Data Specialist icon">
-                        <div class="service-text">
-                            <h4 class="h4 service-item-title">Geospatial Data Specialist</h4>
-                            <p class="service-item-text">
-                                Managing, processing, and analyzing large-scale geospatial datasets to support
-                                data-driven decision-making.
-                            </p>
+                    <li class="service-item">
+                        <div class="service-icon-box">
+                            <img src="geospatial.png" alt="Geospatial Data Icon">
+                        </div>
+                        <div class="service-content-box">
+                            <h4>Geospatial Data Specialist</h4>
+                            <p>Managing, processing, and analyzing large-scale geospatial datasets to support
+                                data-driven decision-making.</p>
                         </div>
                     </li>
-
-                    <li class="service-item" data-aos="fade-up" data-aos-delay="100">
-                        <img class="service-icon" src="database.png" alt="Spatial Data Analyst icon">
-                        <div class="service-text">
-                            <h4 class="h4 service-item-title">Spatial Data Analyst</h4>
-                            <p class="service-item-text">
-                                Interpreting spatial patterns, trends, and relationships to provide insights and
-                                solutions for geospatial challenges.
-                            </p>
+                    <li class="service-item">
+                        <div class="service-icon-box">
+                            <img src="database.png" alt="Spatial Data Icon">
+                        </div>
+                        <div class="service-content-box">
+                            <h4>Spatial Data Analyst</h4>
+                            <p> Interpreting spatial patterns, trends, and relationships to provide insights and
+                                solutions for geospatial challenges.</p>
                         </div>
                     </li>
-                </ul>
-
                 </ul>
             </div>
         </section>
@@ -749,55 +783,45 @@
                     <img src="Dampak Tsunami.jpg" alt="Project 1">
                     <h3>Tsunami Hazard Map</h3>
                     <p>This map illustrates the tsunami hazard level in the coastal area of Parangtritis, classified
-                        from very
-                        low
-                        to very high. This information is useful for disaster mitigation planning and determining
-                        evacuation
-                        zones.
+                        from very low to very high. This information is useful for disaster mitigation planning and determining
+                        evacuation zones.
                     </p>
                 </div>
                 <div class="card project" data-aos="zoom-in" data-aos-delay="200">
                     <img src="DAS.jpg" alt="Project 2">
                     <h3>River Order Map</h3>
                     <p>This map shows the division and classification of river orders in an area, used for hydrographic
-                        network
-                        analysis, water resource management, and flood disaster mitigation.</p>
+                        network analysis, water resource management, and flood disaster mitigation.</p>
                 </div>
                 <div class="card project" data-aos="zoom-in" data-aos-delay="400">
                     <img src="Klaster.jpg" alt="Project 3">
                     <h3>Building Density Map</h3>
                     <p>This map visualizes the level of building density in an area, useful for spatial planning,
-                        development
-                        control, and infrastructure management.</p>
+                        development control, and infrastructure management.</p>
                 </div>
                 <div class="card project" data-aos="zoom-in" data-aos-delay="400">
                     <img src="Suhu.jpg" alt="Project 4">
                     <h3>Temperature Map</h3>
                     <p>This map shows the distribution of air temperature in a region during a specific period, useful
-                        for
-                        climate
-                        analysis, agricultural planning, and weather monitoring.</p>
+                        for climate analysis, agricultural planning, and weather monitoring.</p>
                 </div>
                 <div class="card project" data-aos="zoom-in" data-aos-delay="400">
                     <img src="Flow Map.png" alt="Project 5">
                     <h3>Flow Map of Air Passenger Volume</h3>
                     <p>This map illustrates the flow of air passenger movement between airports using a flow map symbol,
-                        helping
-                        analyze connectivity and air transportation trends.</p>
+                        helping analyze connectivity and air transportation trends.</p>
                 </div>
                 <div class="card project" data-aos="zoom-in" data-aos-delay="400">
                     <img src="Jumlah PDD.png" alt="Project 6">
                     <h3>Population Map</h3>
                     <p>This map shows the distribution of the population in a specific area, used for public service
-                        planning,
-                        development, and social policy making.</p>
+                        planning, development, and social policy making.</p>
                 </div>
                 <div class="card project" data-aos="zoom-in" data-aos-delay="400">
                     <img src="Penggunaan Lahan.jpg" alt="Project 7">
                     <h3>Land Use Map</h3>
                     <p>This map presents land use such as settlements, agriculture, forests, and water bodies, important
-                        for
-                        environmental management and land use change control.</p>
+                        for environmental management and land use change control.</p>
                 </div>
                 <div class="card project" data-aos="zoom-in" data-aos-delay="400">
                     <img src="Pola Ruang.png" alt="Project 8">
@@ -845,12 +869,10 @@
                 <div class="card project" data-aos="zoom-in">
                     <h3>WebGIS GoToTrans</h3>
                     <p>A WebGIS designed to make it easier for the public to access information about TransJogja. This
-                        WebGIS
-                        has
-                        an
-                        interactive map feature that contains the distribution of bus stops and TransJogja routes
-                        according to bus
-                        codes. In addition, it also provides information on stops near popular tourist destinations in
+                        WebGIS has an interactive map feature that contains the distribution of bus stops and TransJogja
+                        routes
+                        according to bus codes. In addition, it also provides information on stops near popular tourist
+                        destinations in
                         Yogyakarta.
                     </p>
                     <img src="GoToTrans.png" alt="Project 1">
@@ -861,11 +883,9 @@
                 <div class="card project" data-aos="zoom-in" data-aos-delay="200">
                     <h3>WebGIS Mueban</h3>
                     <p>A WebGIS designed to display the distribution of museums in Bandung. This WebGIS features an
-                        interactive
-                        map
-                        and information tables about each museum. Each museum location is integrated with nearby Trans
-                        Bandung bus
-                        stops, making it easier for foreign tourists or visitors to reach the museums.</p>
+                        interactive map and information tables about each museum. Each museum location is integrated
+                        with nearby Trans
+                        Bandung bus stops, making it easier for foreign tourists or visitors to reach the museums.</p>
                     <img src="Mueban.png" alt="Project 2">
                     <div class="btn-container">
                         <a href="https://github.com/RismaKawurihan/mueban" class="btn">View Project</a>
@@ -874,12 +894,10 @@
                 <div class="card project" data-aos="zoom-in" data-aos-delay="400">
                     <h3>The Beautiful Earth Lombok</h3>
                     <p>This WebGIS StoryMap takes you on a journey to explore the beauty of Lombok Island through a
-                        combination
-                        of
-                        visual narratives and interactive maps. It also features portraits of local cultural life rich
-                        in
-                        tradition,
-                        making Lombok not only visually stunning but also historically and culturally valuable.</p>
+                        combination of visual narratives and interactive maps. It also features portraits of local
+                        cultural life rich
+                        in tradition, making Lombok not only visually stunning but also historically and culturally
+                        valuable.</p>
                     <img src="Lombok.png" alt="Project 3">
                     <div class="btn-container">
                         <a href="https://storymaps.arcgis.com/stories/ea58e449eb6e4c2fa41cccba146f70fd" class="btn">View
@@ -890,10 +908,10 @@
                     <h3>Swaraning Sidorejo</h3>
                     <p>This WebGIS StoryMap contains information about the history, environment, culture, tourism, and
                         local
-                        works
-                        of Sidorejo Village. It aims to digitize village information so that data and potential can be
-                        well
-                        documented, easily accessible, and utilized for promotion, education, and spatial data-based
+                        works of Sidorejo Village. It aims to digitize village information so that data and potential
+                        can be
+                        well documented, easily accessible, and utilized for promotion, education, and spatial
+                        data-based
                         decision-making.
                     </p>
                     <img src="Swaraning Sidorejo.png" alt="Project 4">
@@ -904,14 +922,11 @@
                 <div class="card project" data-aos="zoom-in" data-aos-delay="400">
                     <h3>DailyAPP Mobile Application</h3>
                     <p>DailyAPP is a mobile application designed to manage activities, travel, and location search for
-                        users. It
-                        includes a Planning feature for scheduling activities, Memories for storing memorable events,
-                        and
-                        Recommended
-                        for suggesting restaurants, cafes, and photo spots in Yogyakarta. There is also a Map feature
-                        showing
-                        leisure
-                        locations along with related information.</p>
+                        users. It includes a Planning feature for scheduling activities, Memories for storing memorable
+                        events,
+                        and Recommended for suggesting restaurants, cafes, and photo spots in Yogyakarta. There is also
+                        a Map feature
+                        showing leisure locations along with related information.</p>
                     <img src="Daily App.png" alt="Project 5">
                 </div>
             </div>
@@ -942,7 +957,7 @@
                     <div class="internship-icon">🌐</div>
                     <div class="internship-content" style="font-family: Georgia, serif">
                         <strong>Spatial Planning Agency Yogyakarta City</strong>
-                            <p>Dinas Pertanahan dan Tata Ruang Kota Yogyakarta</p>
+                        <p>Dinas Pertanahan dan Tata Ruang Kota Yogyakarta</p>
                         <span>(Feb 2025 – Jun 2025)</span>
                         <p>
                             Evaluated WebGIS platforms (Pepadhang Resik Jogja, Loka Tata, Geoportal Yogyakarta City),
