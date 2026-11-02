@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risma Enggar Sri Kawurihan | Portfolio</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #12304a;
+            --blue: #1769aa;
+            --cyan: #dff4f5;
+            --ink: #203040;
+            --muted: #637487;
+            --paper: #fff;
+            --line: #e1e9ef;
+            --shadow: 0 12px 35px rgba(23, 55, 79, .09)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 28px
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 28px 24px 290px;
+            font: 16px/1.65 Inter, Arial, sans-serif;
+            color: var(--ink);
+            background: #f3f5f6
+        }
+
+        a {
+            color: inherit
+        }
+
+        img {
+            max-width: 100%
+        }
+
+        .sidebar {
+            position: fixed;
+            inset: 18px auto 18px 18px;
+            width: 246px;
+            overflow-y: auto;
+            padding: 24px 20px;
+            background: linear-gradient(160deg, #12304a, #1769aa);
+            color: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            z-index: 999
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px
+        }
+
+        .profile-header img {
+            width: 62px;
+            height: 62px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #ffffff90
+        }
+
+        .sidebar h1 {
+            font-size: 1.08rem;
+            line-height: 1.35;
+            margin: 0
+        }
+
+        .sidebar>p {
+            font-size: .85rem;
+            color: #e0edf6;
+            margin: 12px 0 22px
+        }
+
+        .sidebar nav a {
+            display: block;
+            padding: 9px 11px;
+            margin: 4px 0;
+            color: #edf7ff;
+            text-decoration: none;
+            border-radius: 9px;
+            font-size: .92rem
+        }
+
+        .sidebar nav a:hover,
+        .sidebar nav a:focus {
+            background: #ffffff20
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 8px;
+            margin-top: 20px
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 10px;
+            background: #ffffff12;
+            border: 1px solid #ffffff18;
+            border-radius: 10px;
+            min-width: 0
+        }
+
+        .contact-card img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain
+        }
+
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+            font-size: .82rem
+        }
+
+        .menu-toggle {
+            display: none
+        }
+
+        .main-container {
+            max-width: 1180px;
+            margin: 0 auto
+        }
+
+        .top-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 22px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            box-shadow: var(--shadow)
+        }
+
+        .top-nav a {
+            padding: 8px 13px;
+            border-radius: 9px;
+            text-decoration: none;
+            color: var(--navy);
+            font-size: .9rem;
+            font-weight: 600
+        }
+
+        .top-nav a:hover,
+        .top-nav a.active {
+            background: var(--cyan);
+            color: #075985
+        }
+
+        section {
+            display: none;
+            margin: 0 0 30px;
+            scroll-margin-top: 18px
+        }
+
+        section.active {
+            display: block;
+            animation: sectionFade .22s ease
+        }
+
+        @keyframes sectionFade {
+            from {
+                opacity: .55;
+                transform: translateY(4px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: clamp(1.65rem, 3vw, 2.2rem);
+            line-height: 1.2;
+            color: var(--navy);
+            margin: 0 0 18px
+        }
+
+        section h3 {
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin: 24px 0 14px
+        }
+
+        #mapping>h2,
+        #projects>h2,
+        #internship>h2,
+        #resume>h2 {
+            text-align: center
+        }
+
+        .top-nav a {
+            transition: background .18s ease, color .18s ease
+        }
+
+        .card {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: clamp(18px, 3vw, 30px);
+            box-shadow: var(--shadow);
+            margin-bottom: 22px
+        }
+
+        .card h2 {
+            font-size: 1.55rem;
+            color: var(--navy);
+            text-align: center
+        }
+
+        .card p {
+            color: #435365;
+            line-height: 1.75
+        }
+
+        .service-title {
+            color: var(--navy);
+            font-size: 1.25rem
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px
+        }
+
+        .service-item {
+            display: flex;
+            gap: 14px;
+            padding: 17px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #fbfdff
+        }
+
+        .service-icon-box img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain
+        }
+
+        .service-content-box h4 {
+            margin: 0 0 5px;
+            color: var(--navy)
+        }
+
+        .service-content-box p {
+            margin: 0;
+            font-size: .92rem
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px
+        }
+
+        .project {
+            margin: 0;
+            min-width: 0
+        }
+
+        .project h3 {
+            margin-top: 0
+        }
+
+        .project img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+            object-position: center;
+            background: #f5f7f8;
+            border: 1px solid var(--line);
+            border-radius: 12px
+        }
+
+        .project:has(img[src*="Dampak Tsunami"], img[src*="Peta_PL"], img[src*="DAS"], img[src*="Klaster"], img[src*="Suhu"], img[src*="Flow Map"], img[src*="Jumlah PDD"], img[src*="Penggunaan Lahan"], img[src*="Pola Ruang"], img[src*="MVI"], img[src*="Hujan Wilayah"], img[src*="Peta PL Yogyakarta"]) {
+            height: auto
+        }
+
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 12px
+        }
+
+        .btn,
+        .asset-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 9px 13px;
+            border-radius: 10px;
+            background: var(--blue);
+            color: white;
+            text-decoration: none;
+            border: 0;
+            font: 600 .88rem Arial, sans-serif;
+            cursor: pointer
+        }
+
+        .btn:hover,
+        .asset-btn:hover {
+            background: var(--navy)
+        }
+
+        .internship-container {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px
+        }
+
+        .internship-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            padding: 19px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 15px;
+            box-shadow: 0 6px 18px #17374f0a;
+            min-width: 0
+        }
+
+        .internship-icon {
+            font-size: 25px;
+            line-height: 1.4
+        }
+
+        .internship-content {
+            min-width: 0
+        }
+
+        .internship-content strong {
+            display: block;
+            color: var(--navy);
+            font-size: 1rem
+        }
+
+        .internship-content>p:first-of-type {
+            margin: 3px 0;
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        .internship-content span {
+            display: block;
+            color: var(--blue);
+            font-size: .82rem;
+            margin: 4px 0 8px
+        }
+
+        .internship-content p {
+            font-size: .91rem;
+            margin: 8px 0
+        }
+
+        .asset-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px
+        }
+
+        .asset-btn.secondary {
+            background: #e8f3f8;
+            color: var(--navy)
+        }
+
+        .resume-title {
+            text-align: center
+        }
+
+        .resume-card {
+            padding: clamp(18px, 3vw, 30px)
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--navy);
+            margin: 15px 0
+        }
+
+        .education-list,
+        .org-list {
+            padding-left: 22px
+        }
+
+        .education-list li,
+        .org-list li {
+            margin: 12px 0
+        }
+
+        .section-divider {
+            height: 1px;
+            background: var(--line);
+            margin: 25px 0
+        }
+
+        .org-item {
+            display: flex;
+            gap: 12px
+        }
+
+        .org-dot {
+            flex: 0 0 9px;
+            width: 9px;
+            height: 9px;
+            margin-top: 9px;
+            border-radius: 50%;
+            background: var(--blue)
+        }
+
+        .org-content p {
+            margin: 4px 0;
+            color: var(--muted)
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px
+        }
+
+        .event-card {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 17px;
+            background: #fbfdff
+        }
+
+        .event-card h4 {
+            margin: 0 0 5px;
+            color: var(--navy)
+        }
+
+        .event-card p {
+            margin: 5px 0;
+            font-size: .92rem
+        }
+
+        .event-meta {
+            color: var(--muted);
+            font-size: .82rem
+        }
+
+        .event-template {
+            border: 1px dashed #80a9c5;
+            background: #f7fbff
+        }
+
+        .helper-note {
+            padding: 12px 14px;
+            border-left: 3px solid var(--blue);
+            background: #edf7fb;
+            border-radius: 8px;
+            color: #38566c;
+            font-size: .9rem
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            padding: 20px 0;
+            font-size: .85rem
+        }
+
+        @media(min-width:1001px) {
+            #mapping .projects {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                align-items: start
+            }
+
+            #mapping .project {
+                height: auto;
+                align-self: start
+            }
+
+            #mapping .project img {
+                width: 100%;
+                height: auto;
+                max-height: none;
+                object-fit: contain
+            }
+        }
+
+        @media(max-width:1000px) {
+            body {
+                padding: 18px 20px 20px 275px
+            }
+
+            .sidebar {
+                width: 230px
+            }
+
+            .internship-container {
+                grid-template-columns: 1fr
+            }
+
+            .projects {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .service-list {
+                grid-template-columns: 1fr
+            }
+
+            #mapping .projects {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            #mapping .project {
+                height: auto;
+                align-self: start
+            }
+
+            #mapping .project img {
+                width: 100%;
+                height: auto;
+                max-height: none;
+                object-fit: contain
+            }
+        }
+
+        @media(max-width:700px) {
+            body {
+                padding: 72px 13px 16px;
+                margin: 0
+            }
+
+            .sidebar {
+                inset: 0 auto 0 0;
+                width: min(290px, 86vw);
+                height: 100dvh;
+                border-radius: 0 18px 18px 0;
+                transform: translateX(-110%);
+                transition: transform .25s ease
+            }
+
+            .sidebar.active {
+                transform: translateX(0)
+            }
+
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                top: 13px;
+                left: 13px;
+                z-index: 1001;
+                padding: 10px 13px;
+                border: 0;
+                border-radius: 10px;
+                background: var(--navy);
+                color: white;
+                font-size: 1rem;
+                box-shadow: var(--shadow)
+            }
+
+            .top-nav {
+                gap: 5px;
+                padding: 8px
+            }
+
+            .top-nav a {
+                font-size: .8rem;
+                padding: 7px 9px
+            }
+
+            .service-list,
+            .projects,
+            .internship-container,
+            .event-grid,
+            #mapping .projects {
+                grid-template-columns: 1fr
+            }
+
+            .card {
+                padding: 17px;
+                border-radius: 14px
+            }
+
+            .internship-card {
+                padding: 15px
+            }
+
+            .internship-content p {
+                font-size: .9rem
+            }
+
+            section {
+                margin-bottom: 22px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            * {
+                animation: none !important;
+                transition: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Hamburger Menu -->
+        <button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false"
+            onclick="const sb=document.querySelector('.sidebar'); const opened=sb.classList.toggle('active'); this.setAttribute('aria-expanded', opened)">☰
+            Menu</button>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile-header">
+                <img src="asset/icon/profil.jpg" alt="Foto Profil">
+                <h1>Risma Enggar Sri Kawurihan</h1>
+            </div>
+            <p>GIS Mapping | Geospatial Data Specialist | WebGIS Developer | Spatial Data Analyst</p>
+
+
+            <!-- Kontak langsung di sidebar -->
+            <div class="contact-info">
+                <div class="contact-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+                    <a href="mailto:rismaenggarsrikawurihan@mail.ugm.ac.id">Email</a>
+                </div>
+                <div class="contact-card">
+                    <img src="asset/icon/instagram.png" alt="Instagram">
+                    <a href="https://instagram.com/risma_kawurihan2513" target="_blank">risma_kawurihan2513</a>
+                </div>
+                <div class="contact-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                    <a href="https://linkedin.com/in/RismaKawurihan" target="_blank">RismaKawurihan</a>
+                </div>
+                <div class="contact-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+                    <a href="https://wa.me/6281575806132" target="_blank">081575806132</a>
+                </div>
+                <div class="contact-card">
+                    <img src="asset/icon/github.png" alt="GitHub">
+                    <a href="https://github.com/RismaKawurihan" target="_blank">RismaKawurihan</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Top navigation -->
+        <div class="top-nav">
+            <a href="#about">About Me</a>
+            <a href="#mapping">Mapping</a>
+            <a href="#projects">Projects</a>
+            <a href="#internship">Internship</a>
+            <a href="#resume">Education & Events</a>
+        </div>
+
+        <!-- About Me -->
+        <section id="about" data-aos="fade-up">
+            <div class="card">
+                <h2>About Me</h2>
+                <p>I am a ninth-semester student in the Geographical Information Systems Study Program at Universitas
+                    Gadjah Mada, with a strong interest in spatial data management, analysis, and visualization.I have
+                    experience using GIS software such as ArcGIS, AutoCAD, ArcGIS, pgAdmin, and Ocean Data View, as
+                    well as programming skills in R, Python, JavaScript, HTML/CSS, and PHP for WebGIS development and
+                    application building. Additionally, I am skilled in deep learning-based geospatial data processing
+                    using Google Earth
+                    Engine and ArcGIS Pro, including object detection, feature extraction, and 3D modeling.</p>
+
+                <!-- My Skills -->
+                <h3 class="h3 service-title">My Skills</h3>
+
+                <ul class="service-list">
+                    <li class="service-item">
+                        <div class="service-icon-box">
+                            <img src="asset/icon/web.png" alt="WebGIS Icon">
+                        </div>
+                        <div class="service-content-box">
+                            <h4>WebGIS Developer</h4>
+                            <p>Designing and developing interactive map-based applications integrating spatial data
+                                with modern web technologies.</p>
+                        </div>
+                    </li>
+                    <li class="service-item">
+                        <div class="service-icon-box">
+                            <img src="asset/icon/mapping.png" alt="GIS Mapping Icon">
+                        </div>
+                        <div class="service-content-box">
+                            <h4>GIS Mapping</h4>
+                            <p>Creating accurate and detailed maps for various purposes, including urban planning,
+                                environmental studies, and infrastructure development.</p>
+                        </div>
+                    </li>
+                    <li class="service-item">
+                        <div class="service-icon-box">
+                            <img src="asset/icon/geospatial.png" alt="Geospatial Data Icon">
+                        </div>
+                        <div class="service-content-box">
+                            <h4>Geospatial Data Specialist</h4>
+                            <p>Managing, processing, and analyzing large-scale geospatial datasets to support
+                                data-driven decision-making.</p>
+                        </div>
+                    </li>
+                    <li class="service-item">
+                        <div class="service-icon-box">
+                            <img src="asset/icon/database.png" alt="Spatial Data Icon">
+                        </div>
+                        <div class="service-content-box">
+                            <h4>Spatial Data Analyst</h4>
+                            <p> Interpreting spatial patterns, trends, and relationships to provide insights and
+                                solutions for geospatial challenges.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+
+        <!-- Mapping -->
+        <section id="mapping" data-aos="fade-up">
+            <h2 style="text-align:center; font-family: Georgia, serif;">Mapping</h2>
+            <div class="projects">
+
+                <div class="card project" data-aos="zoom-in">
+                    <img src="asset/mapping/Dampak Tsunami.jpg" alt="Project 1">
+                    <h3>Tsunami Hazard Map</h3>
+                    <p>Created using ArcGIS through tsunami hazard classification, spatial overlay, and coastal
+                        analysis. The map identifies tsunami risk zones from very low to very high to support disaster
+                        mitigation and evacuation planning.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in">
+                    <img src="asset/mapping/Peta_PL_Selokan_Mataran.jpg" alt="Project 13">
+                    <h3>Land Use Map of Selokan Mataram</h3>
+                    <p>Created using ArcGIS through digitization, spatial editing, and land use classification based on
+                        satellite imagery and spatial data. The map illustrates land use distribution along the Selokan
+                        Mataram area to support spatial and environmental analysis.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="asset/mapping/DAS.jpg" alt="Project 2">
+                    <h3>River Order Map</h3>
+                    <p>Developed in ArcGIS using DEM-based hydrological analysis, including flow direction, flow
+                        accumulation, and stream ordering. The map represents river hierarchy for watershed and water
+                        resource analysis.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/Klaster.jpg" alt="Project 3">
+                    <h3>Building Density Map</h3>
+                    <p>Produced in ArcGIS using building footprint data and spatial density analysis. The map visualizes
+                        building concentration to support urban planning and infrastructure management.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/Suhu.jpg" alt="Project 4">
+                    <h3>Temperature Map</h3>
+                    <p>Created with ArcGIS by processing temperature observation data and applying spatial
+                        interpolation. The map illustrates regional temperature distribution for climate and
+                        environmental analysis.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/Flow Map.png" alt="Project 5">
+                    <h3>Flow Map of Air Passenger Volume</h3>
+                    <p>Designed in ArcGIS using airport location data and passenger movement flow visualization. The map
+                        highlights connectivity and travel intensity between airports through flow line symbology.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/Jumlah PDD.png" alt="Project 6">
+                    <h3>Population Map</h3>
+                    <p>Created in ArcGIS by joining population statistics with administrative boundary data and applying
+                        graduated symbology. The map shows spatial population distribution for development and public
+                        service planning.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/Penggunaan Lahan.jpg" alt="Project 7">
+                    <h3>Land Use Map</h3>
+                    <p>Produced using ArcGIS through land use classification, digitization, and spatial editing from
+                        satellite imagery. The map presents land use categories for environmental and spatial planning
+                        analysis.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/Pola Ruang.png" alt="Project 8">
+                    <h3>Spatial Pattern Map</h3>
+                    <p>Created in ArcGIS by integrating regional spatial planning (RTRW) data and land allocation
+                        layers. The map visualizes protected and cultivation zones for spatial planning purposes.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/MVI.jpg" alt="Project 9">
+                    <h3>Mangrove Vegetation and Index Map</h3>
+                    <p>Developed in ArcGIS and ArcGIS by processing satellite imagery and calculating mangrove
+                        vegetation indices. The map displays mangrove distribution and vegetation density for coastal
+                        ecosystem monitoring.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/Tentatif.jpg" alt="Project 10">
+                    <h3>Tentative Land Use Map</h3>
+                    <p>Created using ArcGIS through digitization, spatial editing, and overlay analysis of planning
+                        data. The map presents a preliminary land use design for spatial planning evaluation.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/Geomorfologi.jpg" alt="Project 11">
+                    <h3>Geomorphology Map</h3>
+                    <p>Produced in ArcGIS using DEM analysis, terrain classification, and landform interpretation. The
+                        map identifies geomorphological units for geological and hazard assessment.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="asset/mapping/Hujan Wilayah.jpg" alt="Project 12">
+                    <h3>Regional Rainfall Map</h3>
+                    <p>Created with ArcGIS by processing rainfall station data and generating interpolated rainfall
+                        surfaces. The map illustrates rainfall distribution for water resource and flood mitigation
+                        analysis.</p>
+                </div>
+
+                <div class="card project" data-aos="zoom-in">
+                    <img src="asset/mapping/Peta PL Yogyakarta.jpg" alt="Project 14">
+                    <h3>Land Use Map of Yogyakarta</h3>
+                    <p>Developed in ArcGIS through digitization, spatial data processing, and land use classification.
+                        The map visualizes the distribution of land use types across Yogyakarta for spatial planning and
+                        land use analysis.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" data-aos="fade-up">
+            <h2 style="text-align:center; font-family: Georgia, serif;">Projects</h2>
+            <div class="projects">
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>SmartTrans</h3>
+                    <p>SmartTrans is a WebGIS application that provides information about TransJogja bus routes, stops,
+                        and schedules. It features an interactive map that allows users to easily find the nearest bus
+                        stops and plan their trips using TransJogja services.
+                    </p>
+                    <img src="asset/project/smarttrans.png" alt="Project 1">
+                    <div class="btn-container">
+                        <a href="https://SmartTrans.my.id" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>Swaraning Sidorejo</h3>
+                    <p>This WebGIS StoryMap contains information about the history, environment, culture, tourism, and
+                        local
+                        works of Sidorejo Village. It aims to digitize village information so that data and potential
+                        can be well documented, easily accessible, and utilized for promotion, education, and spatial
+                        data-based
+                        decision-making.
+                    </p>
+                    <img src="asset/project/Swaraning Sidorejo.png" alt="Project 2">
+                    <div class="btn-container">
+                        <a href="https://bit.ly/swaraningsidorejo" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>DailyAPP Mobile Application</h3>
+                    <p>DailyAPP is a mobile application designed to manage activities, travel, and location search for
+                        users. It includes a Planning feature for scheduling activities, Memories for storing memorable
+                        events,and Recommended for suggesting restaurants, cafes, and photo spots in Yogyakarta. There
+                        is also a Map feature
+                        showing leisure locations along with related information.</p>
+                    <img src="asset/project/Daily App.png" alt="Project 3">
+                </div>
+                <div class="card project" data-aos="zoom-in">
+                    <h3>WebGIS GoToTrans</h3>
+                    <p>A WebGIS designed to make it easier for the public to access information about TransJogja. This
+                        WebGIS has an interactive map feature that contains the distribution of bus stops and TransJogja
+                        routes
+                        according to bus codes. In addition, it also provides information on stops near popular tourist
+                        destinations in Yogyakarta.
+                    </p>
+                    <img src="asset/project/GoToTrans.png" alt="Project 4">
+                    <div class="btn-container">
+                        <a href="https://github.com/RismaKawurihan/pgweb_responsi" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="card project" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>WebGIS Mueban</h3>
+                    <p>A WebGIS designed to display the distribution of museums in Bandung. This WebGIS features an
+                        interactive map and information tables about each museum. Each museum location is integrated
+                        with nearby Trans
+                        Bandung bus stops, making it easier for foreign tourists or visitors to reach the museums.</p>
+                    <img src="asset/project/Mueban.png" alt="Project 5">
+                    <div class="btn-container">
+                        <a href="https://github.com/RismaKawurihan/mueban" class="btn">View Project</a>
+                    </div>
+                </div>
+                <div class="card project" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>The Beautiful Earth Lombok</h3>
+                    <p>This WebGIS StoryMap takes you on a journey to explore the beauty of Lombok Island through a
+                        combination of visual narratives and interactive maps. It also features portraits of local
+                        cultural life rich
+                        in tradition, making Lombok not only visually stunning but also historically and culturally
+                        valuable.</p>
+                    <img src="asset/project/Lombok.png" alt="Project 6">
+                    <div class="btn-container">
+                        <a href="https://storymaps.arcgis.com/stories/ea58e449eb6e4c2fa41cccba146f70fd" class="btn">View
+                            Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internship -->
+        <section id="internship" data-aos="fade-up">
+            <h2 style="text-align:center; font-family: Georgia, serif;">Internship</h2>
+
+            <h3 style="font-family: Georgia, serif;">Internship Experience</h3>
+            <div class="internship-container">
+                <!-- GIS Data Technical — Ministry of Environment project -->
+                <div class="internship-card">
+                    <div class="internship-icon">🌱</div>
+                    <div class="internship-content">
+                        <strong>GIS Data Technical — Land Use Digitization Project</strong>
+                        <p>Ministry of Environment of the Republic of Indonesia project</p>
+                        <span>Project-based Work · September 2026 · Indonesia</span>
+                        <ul>
+                            <li>Digitized land-use features by interpreting Sentinel-2 satellite imagery using
+                                GeoStevia.</li>
+                            <li>Produced more than 3,000 digitized land-use features and samples to support geospatial
+                                data processing.</li>
+                            <li>Performed quality checks and topology validation to identify and correct geometry
+                                errors, including gaps and overlaps.</li>
+                            <li>Prepared consistent spatial datasets for use in subsequent analysis.</li>
+                        </ul>
+                        <div class="asset-actions">
+                            <a class="asset-btn secondary" href="asset/sertifikat/Dokumentasi KLH.pdf" target="_blank"
+                                rel="noopener">View Activity Photos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geospatial Information Agency -->
+                <div class="internship-card">
+                    <div class="internship-icon">🌍</div>
+                    <div class="internship-content">
+                        <strong>Geospatial Data & Cartography Intern — Atlas Division</strong>
+                        <p>Geospatial Information Agency of Indonesia (BIG)</p>
+                        <span>Internship · September–December 2025 · Cibinong, Indonesia</span>
+                        <ul>
+                            <li>Contributed to the Development and Regional Policy Direction Map for Java as part of a
+                                regional atlas for development planning.</li>
+                            <li>Edited and screened more than 200,000 river and road records across South Kalimantan,
+                                East Nusa Tenggara, Papua, and West Sumatra.</li>
+                            <li>Digitized more than 100 development-related features in Papua and Maluku.</li>
+                            <li>Digitized airport and seaport features to support regional connectivity mapping in Papua
+                                and Maluku.</li>
+                            <li>Organized thematic geospatial datasets for atlas production and development planning.
+                            </li>
+                        </ul>
+                        <div class="asset-actions">
+                            <a class="asset-btn" href="asset/sertifikat/Sertif BIG.pdf" target="_blank"
+                                rel="noopener">View Certificate</a>
+                            <a class="asset-btn secondary" href="dokumentasi/big-2025.jpg" target="_blank"
+                                rel="noopener">View Activity Photos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yogyakarta City Land and Spatial Planning Agency -->
+                <div class="internship-card">
+                    <div class="internship-icon">🌐</div>
+                    <div class="internship-content">
+                        <strong>GIS & WebGIS Development Intern — Spatial Planning Mapping Division</strong>
+                        <p>Yogyakarta City Land and Spatial Planning Agency (Dinas Pertanahan dan Tata Ruang Kota
+                            Yogyakarta)</p>
+                        <span>Internship · March–June 2025 · Yogyakarta, Indonesia</span>
+                        <ul>
+                            <li>Evaluated the interface, functionality, accessibility, and user experience of PEPADHANG
+                                RESIK JOGJA and the Yogyakarta City Government Geoportal.</li>
+                            <li>Contributed to the development of Loka Tata WebGIS using Visual Studio Code and XAMPP,
+                                improving the organization of its interface and functions for presenting detailed
+                                Building and Environmental Planning (RTBL) information.</li>
+                            <li>Digitized 791 land parcels in BHUMI ATR/BPN.</li>
+                            <li>Digitized building rooftops in QGIS to support building-number mapping in several urban
+                                villages across Yogyakarta City.</li>
+                            <li>Supported the preparation and structured presentation of geospatial information for
+                                spatial planning.</li>
+                        </ul>
+                        <div class="asset-actions">
+                            <a class="asset-btn" href="asset/sertifikat/Sertif DPTR Risma.pdf" target="_blank"
+                                rel="noopener">View Certificate</a>
+                            <a class="asset-btn secondary" href="dokumentasi/distaru-yogyakarta.jpg" target="_blank"
+                                rel="noopener">View Activity Photos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ATR/BPN Boyolali -->
+                <div class="internship-card">
+                    <div class="internship-icon">🏢</div>
+                    <div class="internship-content">
+                        <strong>GIS & Surveying Intern — Survey and Mapping Division</strong>
+                        <p>Boyolali Regency Land Office, Ministry of Agrarian Affairs and Spatial Planning / National
+                            Land Agency (ATR/BPN)</p>
+                        <span>Internship · January–February 2025 · Boyolali, Central Java, Indonesia</span>
+                        <ul>
+                            <li>Developed a 3D map of Boyolali Regency using ArcGIS Pro and deep-learning-based building
+                                detection.</li>
+                            <li>Digitized building features in AutoCAD to support detailed-scale spatial data
+                                preparation.</li>
+                            <li>Conducted field data checks and coordinate quality assessments using geodetic GNSS
+                                across seven subdistricts in Boyolali Regency.</li>
+                            <li>Supported the collection, processing, and quality control of geospatial data for
+                                surveying and mapping activities.</li>
+                        </ul>
+                        <div class="asset-actions">
+                            <a class="asset-btn" href="asset/sertifikat/Sertif BPN.pdf" target="_blank"
+                                rel="noopener">View Certificate</a>
+                            <a class="asset-btn secondary" href="dokumentasi/atrbpn-boyolali.jpg" target="_blank"
+                                rel="noopener">View Activity Photos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="font-family: Georgia, serif;">Field Work Practice</h3>
+            <div class="internship-container">
+                <div class="internship-card">
+                    <div class="internship-icon">🗺️</div>
+                    <div class="internship-content" style="font-family: Georgia, serif">
+                        <strong>First – Universitas Gadjah Mada</strong>
+                        <span>(Feb 2023 – Jul 2023)</span>
+                        <p>
+                            Prepared geospatial data, introduced landforms in Sleman, Yogyakarta City, and Bantul,
+                            and developed base & thematic maps for Turi District, Sleman.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="internship-card">
+                    <div class="internship-icon">📍</div>
+                    <div class="internship-content" style="font-family: Georgia, serif">
+                        <strong>Second – Universitas Gadjah Mada</strong>
+                        <span>(Mar 2024 – Jul 2024)</span>
+                        <p>
+                            Collected data and mapped Nguntuk-untuk Hamlet, Ngargosari Village, Samigaluh District,
+                            Kulon Progo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!--Resume-->
+        <section id="resume" data-aos="fade-up">
+            <h2 class="resume-title">Education, Events & Credentials</h2>
+            <div class="card resume-card">
+                <!-- Education -->
+                <h3 class="section-title">Education</h3>
+                <ul class="education-list">
+                    <li>
+                        <strong>SMA Negeri 1 Banyudono</strong> – Natural Sciences (Jun 2019 - Jul 2022)
+                    </li>
+                    <li>
+                        <strong>Universitas Gadjah Mada</strong> – Bachelor of Applied Science in Geographic Information
+                        Systems, GPA 3.46/4.00 (Aug 2022 - Oktober 2026)
+                    </li>
+                </ul>
+
+                <div class="section-divider"></div>
+
+                <!-- Organizational Experience -->
+                <h3 class="section-title">Organizational Experience</h3>
+                <ul class="org-list">
+                    <li>
+                        <div class="org-item">
+                            <div class="org-content">
+                                <strong>Keluarga Mahasiswa Departemen Teknologi Kebumian (KMDTK)</strong> –
+                                Entrepreneurship Division Staff (Mar 2024 - Jul 2024)
+                                <p>Managed and purchased merchandise for sale in the canteen, collaborating with 14
+                                    division members.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="org-item">
+                            <div class="org-content">
+                                <strong>PPSMB Pionir Permadani</strong> – Co-Facilitator & Activities Division (Aug 2023
+                                - Nov 2024)
+                                <p>Guided new students during campus orientation and acted as a communication liaison
+                                    with the committee.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="org-item">
+                            <div class="org-content">
+                                <strong>Ramadhan Berkah Mardliyyah (RBM) & SAJADHA</strong> – Public Relations & Liaison
+                                Officer (Mar 2023 - Aug 2024)
+                                <p>Built relationships with sponsors, media, and the public; managed communication with
+                                    guests or speakers.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="org-item">
+                            <div class="org-content">
+                                <strong>Kebumian Study Club (KSC)</strong> – Member (Dec 2023 - Jul 2024)
+                                <p>Participated in training and club activities.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="section-divider"></div>
+                <h3 class="section-title">Webinars, Events & Training</h3>
+                <div class="event-grid">
+                    <article class="event-card event-template">
+                        <h4>BIG Open House 2025 - Explore Geospatial, Empower the Future</h4>
+                        <div class="event-meta">Badan Informasi Geospasial (BIG) · 12 November 2025</div>
+                        <p><strong>Role/Participation</strong> Participant </p>
+                        <p>Enhanced understanding of geospatial information, geospatial data utilization, and its
+                            real-world applications through educational sessions and the creation of geospatial-themed
+                            content using BIG platforms and Tanah Air Indonesia. Additionally, developed spatial
+                            thinking, map interpretation, coordinate identification, geospatial exploration, and
+                            problem-solving skills through interactive exploration activities at BIG, including location
+                            searches using Google Maps, coordinate identification, and contour map interpretation.</p>
+                        <div class="asset-actions">
+                            <a class="asset-btn" href="asset/sertifikat/BIG_OpenHouse2025.pdf" target="_blank"
+                                rel="noopener">View Certificate</a>
+                            <a class="asset-btn secondary" href="dokumentasi/nama-webinar.jpg" target="_blank"
+                                rel="noopener">View Activity Photos</a>
+                        </div>
+                    </article>
+                    <article class="event-card event-template">
+                        <h4>GIK Talent Development</h4>
+                        <div class="event-meta">Gelanggang Inovasi dan Kreativitas (GIK) Universitas Gadjah Mada · 16
+                            Desember 2023</div>
+                        <p><strong>Role/Participation</strong> Participant </p>
+                        <p>Developed skills in personal branding, career development, leadership, professional
+                            communication, entrepreneurship, innovation, and the application of Artificial Intelligence
+                            (AI) to enhance productivity and problem-solving. Additionally, strengthened critical
+                            thinking, problem-solving, teamwork, networking, and professional relationship-building
+                            through mentoring, discussions, idea development, and direct interaction with industry
+                            professionals.</p>
+                        <div class="asset-actions">
+                            <a class="asset-btn" href="asset/sertifikat/Sertifikat GIK.png" target="_blank"
+                                rel="noopener">View Certificate</a>
+                            <a class="asset-btn secondary" href="dokumentasi/nama-webinar.jpg" target="_blank"
+                                rel="noopener">View Activity Photos</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Risma Enggar Sri Kawurihan
+        </footer>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            if (window.AOS) AOS.init({ duration: 650, once: true });
+            const menuLinks = [...document.querySelectorAll('.top-nav a')];
+            const sections = [...document.querySelectorAll('main section, .main-container > section')];
+            function showSection(id, updateHash = false) {
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.toggle('active', section.id === id);
+                });
+                menuLinks.forEach(link => {
+                    const selected = link.getAttribute('href') === '#' + id;
+                    link.classList.toggle('active', selected);
+                    if (selected) link.setAttribute('aria-current', 'page');
+                    else link.removeAttribute('aria-current');
+                });
+                document.querySelector('.sidebar')?.classList.remove('active');
+                document.querySelector('.menu-toggle')?.setAttribute('aria-expanded', 'false');
+                if (updateHash) history.replaceState(null, '', '#' + id);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            menuLinks.forEach(link => link.addEventListener('click', function (event) {
+                event.preventDefault();
+                showSection(this.getAttribute('href').slice(1), true);
+            }));
+            const initialId = location.hash ? location.hash.slice(1) : 'about';
+            showSection(document.getElementById(initialId) ? initialId : 'about');
+        </script>
+
+</body>
+
+</html>
