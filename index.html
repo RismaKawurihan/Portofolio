@@ -494,6 +494,61 @@
             font-size: .85rem
         }
 
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .gallery-content {
+            position: relative;
+            background: #fff;
+            width: min(850px, 100%);
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 24px;
+            border-radius: 14px;
+        }
+
+        .gallery-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            border: none;
+            background: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .gallery-grid img {
+                height: 120px;
+            }
+        }
+
         @media(min-width:1001px) {
             #mapping .projects {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -574,7 +629,7 @@
                 display: block;
                 position: fixed;
                 top: 13px;
-                left: 13px;
+                right: 13px;
                 z-index: 1001;
                 padding: 10px 13px;
                 border: 0;
@@ -690,8 +745,8 @@
         <section id="about" data-aos="fade-up">
             <div class="card">
                 <h2>About Me</h2>
-                <p>I am a ninth-semester student in the Geographical Information Systems Study Program at Universitas
-                    Gadjah Mada, with a strong interest in spatial data management, analysis, and visualization.I have
+                <p>I am a recent graduate of the Geographical Information Systems program at Universitas Gadjah Mada,
+                    with a strong interest in spatial data management, analysis, and visualization. I have
                     experience using GIS software such as ArcGIS, AutoCAD, ArcGIS, pgAdmin, and Ocean Data View, as
                     well as programming skills in R, Python, JavaScript, HTML/CSS, and PHP for WebGIS development and
                     application building. Additionally, I am skilled in deep learning-based geospatial data processing
@@ -964,8 +1019,9 @@
                             <li>Prepared consistent spatial datasets for use in subsequent analysis.</li>
                         </ul>
                         <div class="asset-actions">
-                            <a class="asset-btn secondary" href="asset/sertifikat/Dokumentasi KLH.pdf" target="_blank"
-                                rel="noopener">View Activity Photos</a>
+                            <button class="asset-btn secondary" type="button" onclick="openActivityGallery('klh')">
+                                View Activity Photos
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -991,8 +1047,10 @@
                         <div class="asset-actions">
                             <a class="asset-btn" href="asset/sertifikat/Sertif BIG.pdf" target="_blank"
                                 rel="noopener">View Certificate</a>
-                            <a class="asset-btn secondary" href="dokumentasi/big-2025.jpg" target="_blank"
-                                rel="noopener">View Activity Photos</a>
+                            <button class="asset-btn secondary" type="button"
+                                onclick="openActivityGallery('bigintern')">
+                                View Activity Photos
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1020,8 +1078,9 @@
                         <div class="asset-actions">
                             <a class="asset-btn" href="asset/sertifikat/Sertif DPTR Risma.pdf" target="_blank"
                                 rel="noopener">View Certificate</a>
-                            <a class="asset-btn secondary" href="dokumentasi/distaru-yogyakarta.jpg" target="_blank"
-                                rel="noopener">View Activity Photos</a>
+                            <button class="asset-btn secondary" type="button" onclick="openActivityGallery('dptr')">
+                                View Activity Photos
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1047,8 +1106,9 @@
                         <div class="asset-actions">
                             <a class="asset-btn" href="asset/sertifikat/Sertif BPN.pdf" target="_blank"
                                 rel="noopener">View Certificate</a>
-                            <a class="asset-btn secondary" href="dokumentasi/atrbpn-boyolali.jpg" target="_blank"
-                                rel="noopener">View Activity Photos</a>
+                            <button class="asset-btn secondary" type="button" onclick="openActivityGallery('bpn')">
+                                View Activity Photos
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1161,8 +1221,9 @@
                         <div class="asset-actions">
                             <a class="asset-btn" href="asset/sertifikat/BIG_OpenHouse2025.pdf" target="_blank"
                                 rel="noopener">View Certificate</a>
-                            <a class="asset-btn secondary" href="dokumentasi/nama-webinar.jpg" target="_blank"
-                                rel="noopener">View Activity Photos</a>
+                            <button class="asset-btn secondary" type="button" onclick="openActivityGallery('big')">
+                                View Activity Photos
+                            </button>
                         </div>
                     </article>
                     <article class="event-card event-template">
@@ -1179,8 +1240,22 @@
                         <div class="asset-actions">
                             <a class="asset-btn" href="asset/sertifikat/Sertifikat GIK.png" target="_blank"
                                 rel="noopener">View Certificate</a>
-                            <a class="asset-btn secondary" href="dokumentasi/nama-webinar.jpg" target="_blank"
-                                rel="noopener">View Activity Photos</a>
+                        </div>
+                    </article>
+                    <article class="event-card event-template">
+                        <h4>Unleashing the Power of ArcGIS: New Features for Smarter GIS</h4>
+                        <div class="event-meta">Department of Earth Technology, Vocational College, Universitas Gadjah
+                            Mada · 23 January 2025</div>
+                        <p><strong>Role/Participation</strong> Participant </p>
+                        <p> Participated in a webinar organized by the Department of Earth
+                            Technology, Vocational College, Universitas Gadjah Mada, in
+                            collaboration with Esri Indonesia. The webinar explored new
+                            features of ArcGIS and their potential applications in
+                            supporting smarter, more efficient, and innovative Geographic
+                            Information Systems (GIS) workflows.</p>
+                        <div class="asset-actions">
+                            <a class="asset-btn" href="asset/sertifikat/ESRI.pdf" target="_blank"
+                                rel="noopener">View Certificate</a>
                         </div>
                     </article>
                 </div>
@@ -1217,6 +1292,69 @@
             }));
             const initialId = location.hash ? location.hash.slice(1) : 'about';
             showSection(document.getElementById(initialId) ? initialId : 'about');
+        </script>
+
+        <div id="activityGallery" class="gallery-modal" onclick="closeActivityGallery(event)">
+            <div class="gallery-content">
+                <button class="gallery-close" onclick="closeActivityGallery(event, true)">
+                    &times;
+                </button>
+
+                <h3>Activity Photos</h3>
+
+                <div id="galleryPhotos" class="gallery-grid"></div>
+            </div>
+        </div>
+
+        <script>
+            const activityPhotos = {
+                klh: [
+                    "asset/activity/KLH1.JPG",
+                    "asset/activity/KLH2.JPG"
+                ],
+                bigintern: [
+                    "asset/activity/BIG5.jpeg",
+                    "asset/activity/BIG6.jpeg",
+                    "asset/activity/BIG7.jpeg",
+                    "asset/activity/BIG8.jpeg"
+                ],
+                dptr: [
+                    "asset/activity/DPTR1.jpeg",
+                    "asset/activity/DPTR2.jpeg"
+                ],
+                bpn: [
+                    "asset/activity/BPN1.jpeg",
+                    "asset/activity/BPN2.jpeg",
+                ],
+                big: [
+                    "asset/activity/BIG1.jpeg",
+                    "asset/activity/BIG2.jpeg",
+                    "asset/activity/BIG3.JPG",
+                    "asset/activity/BIG4.JPG"
+                ]
+            };
+
+            function openActivityGallery(type) {
+                const container = document.getElementById("galleryPhotos");
+
+                container.innerHTML = activityPhotos[type]
+                    .map(photo => `
+            <a href="${photo}" target="_blank" rel="noopener">
+                <img src="${photo}" alt="Activity photo"
+                     loading="lazy">
+            </a>
+        `).join("");
+
+                document.getElementById("activityGallery")
+                    .style.display = "flex";
+            }
+
+            function closeActivityGallery(event, force = false) {
+                if (force || event.target.id === "activityGallery") {
+                    document.getElementById("activityGallery")
+                        .style.display = "none";
+                }
+            }
         </script>
 
 </body>
